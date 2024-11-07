@@ -1,0 +1,30 @@
+---
+
+- name: "Configurar IOS XE e IOS XR"
+
+  hosts: all
+
+  gather_facts: no
+  connection: ansible.netcommon.network_cli
+
+  tasks:
+
+    - name: "Configurar NTP en IOS XE"
+
+      when: ansible_network_os == 'cisco.ios.ios'
+      cisco.ios.ios_config:
+        lines:
+
+          - "ntp server 1.1.1.1"
+
+
+    - name: "Configurar NTP en IOS XR"
+
+      when: ansible_network_os == 'iosxr'
+      cisco.iosxr.iosxr_config:
+        lines:
+
+          - "ntp server 2.2.2.2"
+          - "commit"
+
+    

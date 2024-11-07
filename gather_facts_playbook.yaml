@@ -1,0 +1,11 @@
+---
+- name: "Recolección de información con Gather Facts"
+  hosts: all
+  gather_facts: yes
+  connection: ansible.netcommon.network_cli
+  vars:
+    ansible_network_os: cisco.ios.ios
+  tasks:
+    - name: "Mostrar hechos recopilados (facts) del dispositivo"
+      debug:
+        var: ansible_facts

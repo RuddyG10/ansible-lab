@@ -12,6 +12,8 @@ devnetsandboxiosxe.cisco.com ansible_user=admin ansible_password=C1sco12345 ansi
 
 [iosxr]
 sandbox-iosxr-1.cisco.com ansible_user=admin ansible_password=C1sco12345 ansible_network_os=iosxr
+```
+
 ## Requisitos
 
 Para ejecutar estos playbooks de Ansible, asegúrate de cumplir con los siguientes requisitos:
